@@ -91,4 +91,64 @@ Proyek ini terdiri dari dua paket utama:
 
 ---
 
+# [Tugas Magang 2 - Deteksi Warna OpenCV]
+
+Repositori ini berisi pengumpulan tugas untuk program deteksi warna (HSV Color Tuner) yang dibuat menggunakan C++ dan OpenCV.
+
+Proyek ini terdiri dari satu program C++ (`deteksi_warna.cpp`) yang berfungsi sebagai *tuner* HSV untuk sebuah file video input.
+
+---
+
+## 🚀 Fungsionalitas Program
+
+Program ini akan membaca sebuah file video dari argumen *command-line* dan melakukan segmentasi warna berdasarkan rentang HSV yang dapat diatur secara *real-time* melalui *slider*.
+
+Program akan menampilkan tiga jendela:
+1.  **`Original Video`**: Menampilkan video asli yang sedang diputar.
+2.  **`Masked Video`**: Menampilkan hasil *mask* biner (hitam-putih) dari deteksi warna.
+3.  **`HSV Adjustments`**: Panel kontrol berisi 8 *slider* untuk mengatur nilai:
+    * `Hue Min 1 / Hue Max 1` (Rentang Hue pertama)
+    * `Hue Min 2 / Hue Max 2` (Rentang Hue kedua, untuk warna seperti merah)
+    * `Sat Min / Sat Max` (Rentang Saturasi)
+    * `Val Min / Val Max` (Rentang Value/Kecerahan)
+
+---
+
+## 📦 Struktur Repositori
+
+. ├── deteksi_warna.cpp # File source code utama C++ └── README.md # File ini
+
+---
+
+## 🛠️ Prasyarat
+
+* Sistem Operasi Ubuntu
+* C++ Compiler (G++), bagian dari `build-essential`
+* Pustaka Pengembangan OpenCV (`libopencv-dev`)
+* Sebuah file video untuk diuji (misal: `.mp4`, `.avi`)
+
+---
+
+## ⚙️ Cara Menjalankan
+
+1.  Pastikan Anda telah meng-kloning repositori ini dan semua prasyarat (terutama `libopencv-dev`) telah terinstal.
+
+2.  Buka terminal di direktori repositori ini.
+
+3.  Kompilasi program C++ menggunakan `g++` dan `pkg-config`:
+    ```bash
+    g++ deteksi_warna.cpp -o deteksi_app $(pkg-config --cflags --libs opencv4)
+    ```
+
+4.  Jalankan program yang sudah dikompilasi (`deteksi_app`), dengan memberikan nama file video Anda sebagai argumen.
+    ```bash
+    ./deteksi_app nama_video_anda.mp4
+    ```
+
+5.  Tiga jendela akan muncul. Atur *slider* di jendela "HSV Adjustments" untuk menyempurnakan deteksi warna di jendela "Masked Video".
+
+6.  Tekan tombol **'q'** atau **ESC** saat jendela video aktif untuk keluar dari program.
+
+---
+
 :D
