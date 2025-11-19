@@ -1,0 +1,4 @@
+src/**/*.onnx filter=lfs diff=lfs merge=lfs -text
+src/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+src/**/*.stl filter=lfs diff=lfs merge=lfs -text
+src/**/*.dae filter=lfs diff=lfs merge=lfs -text
